@@ -1,0 +1,31 @@
+nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height:10vh;
+  padding: 0px 20px;
+  background-color: var(--black);
+  border-bottom: 1px solid var(--color-6);
+
+  div{
+    a{
+      margin-right: 20px;
+    }
+  }
+
+  a{
+    color: white;
+    text-decoration: none;
+
+    &.active{
+      font-weight: bold;
+    }
+  }
+  button{
+    background: transparent;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 4px;
+    border: 1px solid white;
+  }
+}

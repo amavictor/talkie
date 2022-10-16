@@ -1,0 +1,41 @@
+.message_form{
+  label{
+    .up{
+      width: 50px;
+      height: 50px;
+    }
+  }
+  position: absolute;
+  bottom: 0;
+
+  left:20%;
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+
+  input{
+    width: 40vw;
+    margin: 0px 10px 10px;
+    padding: 10px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    font-size: 18px;
+  }
+
+  .btn{
+    margin-top: -10px;
+    background-color: transparent;
+    border: 2px solid gray;
+    color: white;
+    font-size: 18px;
+    border-radius: 4px;
+    padding: 5px 10px;
+
+    &:hover{
+      cursor: pointer;
+    }
+  }
+
+}
