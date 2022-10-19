@@ -1,0 +1,108 @@
+/*
+.message_wrapper{
+    margin-top: 5px;
+    padding: 0px 5px;
+
+    img{
+        width: 100%;
+        border-radus: 5px;
+    }
+
+    p{
+        padding:10px;
+        display: block;
+        max-width:50%;
+        text-align:left;
+        border-radius: 5px;
+    }
+    small{
+        display: inline-block;
+        margin-top: 15px;
+        opacity:0.8;
+    }
+
+    .me{
+        background: var(--blue);
+        color: white;
+    }
+    .friend{
+        background: gray;
+    }
+}
+.own{
+    text-align: right;
+
+}*/
+
+
+.please{
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 30px;
+
+  .mine{
+    background-color: cornflowerblue;
+    margin-bottom: 30px;
+    color: white;
+    width: 500px;
+    height: fit-content;
+    padding: 2px 5px;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+
+
+
+    small{
+      font-weight: lighter;
+      font-size: 12px;
+    }
+  }
+
+  img{
+    width: 400px;
+    height: 400px;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+}
+
+.friend_message{
+  padding-left: 30px;
+  display: flex;
+  justify-content: flex-start;
+
+  .friend{
+    margin-bottom: 30px;
+    background-color: gray;
+    width: fit-content;
+    height: fit-content;
+    padding: 6px 10px;
+    color:white;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+
+
+    small{
+      font-weight: lighter;
+      font-size: 12px;
+    }
+  }
+
+  img{
+    width: 400px;
+    height: 400px;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+}
+
+@media screen and (max-width: 576px){
+  .mine, .friend{
+    width:100px;
+    p{
+      max-width:100%;
+    }
+  }
+}

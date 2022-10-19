@@ -23,6 +23,14 @@
         object-fit: cover;
         border: 1px solid var(--gray);
       }
+
+      .unread{
+        margin-left: 10px;
+        background-color: cornflowerblue ;
+        color: white;
+        padding: 2px 4px;
+        border-radius: 10px;
+      }
     }
 
     .user_status{
@@ -35,6 +43,47 @@
     }
     .offline{
       background-color: red;
+    }
+  }
+
+  .truncate{
+    font-size: 12px;
+    white-space: nowrap;
+    width: 90%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    strong{
+      margin-right: 10px;
+    }
+  }
+}
+
+.small_screen{
+  display: none;
+}
+.selected_user{
+  background-color: rgba(211, 226, 255, 0.11);
+}
+
+@media screen and (max-width: 576px){
+  .user_wrapper{
+    display: none;
+  }
+  .small_container{
+    padding: 10px 10px;
+    text-align: center;
+    cursor:pointer;
+    .avatar{
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid var(--gray);
+    }
+
+    .small_screen{
+      display: inline-block;
     }
   }
 

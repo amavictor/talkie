@@ -39,3 +39,15 @@
   }
 
 }
+
+@media screen and (max-width: 576px){
+  .message_form{
+    left:3%;
+    right:0;
+
+    input{
+      width: 50vw;
+      margin: 0px 10px;
+    }
+  }
+}

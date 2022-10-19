@@ -3,7 +3,7 @@
   display: grid;
   grid-template-columns: 1fr 3fr;
   overflow: hidden;
-  height: 90vh;
+  height: calc(100vh - 10vh);
   width: 100vw;
 
   .user_container{
@@ -13,8 +13,19 @@
   }
 
   .messages_container{
+    -ms-overflow-style: none;
     position: relative;
     width: 100%;
+
+    &::-webkit-scrollbar{
+      display: none;
+    }
+
+    .messages{
+      height: calc(100vh - 250px);
+      overflow-y: auto;
+      border-bottom: 1px solid var(--gray);
+    }
 
     .messages_user{
       padding: 10px;
@@ -28,5 +39,11 @@
       color: gray;
       text-align: center;
     }
+  }
+}
+
+@media screen and (max-width: 576px){
+  .home_container{
+    grid-template-columns: 1fr 5fr;
   }
 }
