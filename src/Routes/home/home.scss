@@ -22,9 +22,14 @@
     }
 
     .messages{
+      overflow-x: hidden;
       height: calc(100vh - 250px);
       overflow-y: auto;
       border-bottom: 1px solid var(--gray);
+
+      &::-webkit-scrollbar{
+        display: none;
+      }
     }
 
     .messages_user{
@@ -45,5 +50,16 @@
 @media screen and (max-width: 576px){
   .home_container{
     grid-template-columns: 1fr 5fr;
+
+    .user_container{
+      width:100px !important;
+      border-right: none;
+      background-color: rgba(171, 192, 225, 0.28);
+    }
+    .messages_container{
+      .no_conv{
+        font-size: 15px;
+      }
+    }
   }
 }

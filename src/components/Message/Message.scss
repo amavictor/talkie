@@ -40,14 +40,28 @@
 
 }
 
-@media screen and (max-width: 576px){
+@media screen and (max-width: 600px){
   .message_form{
     left:3%;
     right:0;
 
+    label{
+      .up{
+        width: 20px;
+        height: 20px;
+      }
+    }
+
     input{
       width: 50vw;
+      height: 10px;
       margin: 0px 10px;
+      font-size: 12px;
+    }
+
+    .btn{
+      font-size: 12px;
+      padding: 2px 5px;
     }
   }
 }

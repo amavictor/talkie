@@ -72,8 +72,12 @@ export default function Home(){
         //trying to update the unread value of the last message.
         //I want the other person I sent the message to to be able to change
         // the state of unread no me. That is how it's supposed to work.
+
+        //I am getting last message between logged in user and selected user
         const docSnap = await getDoc(doc(db,"lastMsg", id))
-        if(docSnap.data().from !== currentUser){
+        //if last message exists and message is from selected user
+        if(docSnap.data() && docSnap.data().from !== currentUser){
+            //update last message doc, set unread to false
            await updateDoc(doc(db,"lastMsg", id), {
                 unread: false
             })

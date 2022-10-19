@@ -51,7 +51,12 @@
     border-bottom-right-radius: 6px;
     border-bottom-left-radius: 6px;
 
-
+    img{
+      width: 300px;
+      height: 300px;
+      border-radius: 10px;
+      object-fit: cover;
+    }
 
     small{
       font-weight: lighter;
@@ -59,12 +64,7 @@
     }
   }
 
-  img{
-    width: 400px;
-    height: 400px;
-    border-radius: 10px;
-    object-fit: cover;
-  }
+
 }
 
 .friend_message{
@@ -98,11 +98,23 @@
   }
 }
 
-@media screen and (max-width: 576px){
-  .mine, .friend{
-    width:100px;
-    p{
-      max-width:100%;
+@media screen and (max-width: 600px){
+  .please{
+    .mine{
+      max-width: 200px;
+      p{
+        font-size: 12px;
+      }
+    }
+  }
+
+  .friend_message{
+
+    .friend{
+      max-width: 200px;
+      p{
+        font-size: 12px;
+      }
     }
   }
 }
