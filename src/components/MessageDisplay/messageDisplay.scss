@@ -105,7 +105,15 @@
       p{
         font-size: 12px;
       }
+
+      img{
+        width: 200px;
+        height: 200px;
+        border-radius: 10px;
+        object-fit: cover;
+      }
     }
+
   }
 
   .friend_message{
@@ -115,6 +123,14 @@
       p{
         font-size: 12px;
       }
+
+      img{
+        width: 200px;
+        height: 200px;
+        border-radius: 10px;
+        object-fit: cover;
+      }
     }
+
   }
 }
