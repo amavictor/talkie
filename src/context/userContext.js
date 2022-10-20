@@ -1,5 +1,5 @@
 import {createContext, useEffect, useState} from "react";
-import {onAuthStateChanged} from "firebase/auth"
+import {browserLocalPersistence, onAuthStateChanged, setPersistence} from "firebase/auth"
 import {auth} from "../configs/firebase.config";
 import Loader from "../components/loader";
 
@@ -11,11 +11,23 @@ export function UserProvider ({children}){
     const [loading, setLoading] = useState(null)
 
 
-    useEffect(()=>{
-        onAuthStateChanged(auth, (user)=>{
-            setUser(user)
-            setLoading(false)
-        })
+    useEffect( ()=>{
+        const observer =async ()=>{
+            onAuthStateChanged(auth, (user)=>{
+                setUser(user)
+                setLoading(false)
+            })
+            try{
+                await setPersistence(auth,browserLocalPersistence)
+            }
+            catch (e) {
+                alert(e.message)
+            }
+
+        }
+        observer()
+        localStorage.setItem("user", user)
+
     },[])
 
     if (loading){

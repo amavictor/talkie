@@ -1,7 +1,7 @@
 
 import "./Register.scss"
 import {useContext, useState} from "react";
-import {createUserWithEmailAndPassword} from "firebase/auth";
+import {browserLocalPersistence, createUserWithEmailAndPassword, setPersistence} from "firebase/auth";
 import {setDoc,collection,doc,serverTimestamp,Timestamp} from "firebase/firestore"
 import {auth, db} from "../../configs/firebase.config";
 import {useLocation, useNavigate} from "react-router-dom";
@@ -47,6 +47,7 @@ export default function Register(){
                 createdAt:/*Timestamp.fromDate(new Date())*/ serverTimestamp(),
                 isOnline:true
             })
+            /*localStorage.setItem("user", user)*/
             //or await setDoc(doc(db,"user",result.user.uid),{...}//the data)
             //setDocand updateDoc takes the reference and the id then the data
 

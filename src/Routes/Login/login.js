@@ -1,8 +1,8 @@
 
 import "./login.scss"
 import {useContext, useState} from "react";
-import {signInWithEmailAndPassword} from "firebase/auth";
-import {doc, getDocs,addDoc,collection,serverTimestamp,updateDoc,setDoc,Timestamp} from "firebase/firestore"
+import {signInWithEmailAndPassword,browserLocalPersistence,setPersistence} from "firebase/auth";
+import {doc,updateDoc,} from "firebase/firestore"
 import {auth, db} from "../../configs/firebase.config";
 import {useLocation, useNavigate, useParams} from "react-router-dom";
 import {UserContext} from "../../context/userContext";
@@ -10,6 +10,7 @@ import {UserContext} from "../../context/userContext";
 export default function Login(){
 
     const{user, setUser} = useContext(UserContext)
+    const [local,setLocal] = useState("")
     const [data, setData] = useState({
         email: "",
         password:"",
@@ -35,13 +36,13 @@ export default function Login(){
             setData({...data, error: " Please complete the form"})
         }
         try{
+
             const result = await signInWithEmailAndPassword(auth, email,password)
             await updateDoc(doc(db,"users", result.user.uid),{
                 isOnline: true
             })
 
             setUser(auth.currentUser)
-
 
             setData({
                     email: "",
@@ -57,7 +58,6 @@ export default function Login(){
             setLoading(false)
             alert(`${error.message}`)
         }
-
     }
     return(
         <>

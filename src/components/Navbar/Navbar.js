@@ -18,6 +18,7 @@ export default function (){
         await signOut(auth)
         const redirectToHome = location.state?.path || "login"
         navigate(redirectToHome, {replace:true})
+        localStorage.removeItem("user")
     }
     return(
         <>
