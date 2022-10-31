@@ -1,70 +1,109 @@
-# Getting Started with Create React App
+# School Manager FUPRE
+***
+## Overview
+`Description`
+This is the repository of the Federal **Univeristy of Petroleum Resources, Effurun**
+### Important Notice
+To contirbute to this project:
++ Clone the repository to your local.
++ If you are working on it for the first ime, check out to a new branch from develop.
++ Make your contributions
++ Create a Pull Request to develop from your own branch on which those changes were made.
+    - Always compare your own branch to develop
+    - Do this for the second time when you make a pull request.
+    - Wait till all checks are complete.
+    - If checks are not complete, check to see if there are any unused imports in all components.
+      For example:
+``` js
+{import Component from "../../react-componenet"}
+```
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+___
 
-In the project directory, you can run:
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Table of content
+- How to run the project
+- Libraries and dependencies
+- Project structure
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
+#### How to run the project
+This project uses `yarn`, so be sure to install yarn on your laptop before cloning the project. You can install yarn using npm as shown below:
 
-### `npm test`
+```
+npm install --global yarn
+```
+If `yarn` already exists, check your latest version and update to the lastest. To check your version, type this on your terminal
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+yarn --version
+```
+in sumary
 
-### `npm run build`
+    $npm install --global yarn 
+    $yarn --version
+    $yarn start
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+For more information, check out [how to install yarn](https://classic.yarnpkg.com/lang/en/docs/install/#windows-stable)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+___
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### Libraries and dependencies
+Several libraries are being used to ease the developement of this software, which are categorized below
 
-### `npm run eject`
+##### Animations, charts and effects
++ [Framer motion](https://www.npmjs.com/package/framer-motion)  [![Framer motion](https://img.shields.io/github/forks/framer/motion)](https://github.com/framer/motion)
++ [Charts Js]()  [![Charts Js](https://img.shields.io/github/stars/chartjs/Chart.js?label=Charts%20Js%20stars)](https://github.com/chartjs/Chart.js)
++ React modal
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+#### Project management tools
++ Atlaskit (JIRA)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### Error tracking management
++ Sentry  [![Sentry](https://img.shields.io/github/forks/getsentry/sentry?color=green&label=Sentry&logo=Github)](https://github.com/getsentry/sentry)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+#### API calls
++ Axios [![Axios](https://img.shields.io/github/stars/axios/axios?color=red&label=Axios&logo=github)](https://github.com/axios/axios)
++ React Query
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+#### CSS Frameworks
++ Bootstrap [![Bootstrap](https://img.shields.io/github/forks/twbs/bootstrap?color=blue&label=Bootstrap&logo=github)](https://github.com/twbs/bootstrap)
++
 
-## Learn More
+#### Security
++ Dumpurify [![Dumpurify](https://img.shields.io/github/forks/cure53/DOMPurify?color=yellow&label=Dumpurify&logo=github)](https://github.com/cure53/DOMPurify)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+#### State mangement
++ Redux [![Redux](https://img.shields.io/github/forks/reduxjs/redux?color=purple&label=Redux%20forks&logo=github)](https://github.com/reduxjs/redux)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### Middlewares
++ Redux logger
++ Redux Thunk
++ Redux persist
 
-### Code Splitting
+#### Input Validators
++ Yup
++ React-otp-input
+#### Cookies
++ React Cookies
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+___
 
-### Analyzing the Bundle Size
+### PROJECT STRUCTURE
+| File name | Description |
+| ------ | ----------- |
+| src  | Folder that holds all the source code that the project runs on
+| api | Contains all files relating to API calls. All POST and GET requests are here. Including request processors
+| asset | Holds all graphic contents, and fonts.
+| custom hooks |This folder has two custom hook file for checking if user is conneteced to the internet, and for cookies.
+| pages | This folder contains subfolders that hold the pages. It is sub divided into lecturer, shared, student, and super admin. The Lecture folder contains pages only available to lecturers. The shared folder contains pages availble to both students and lectueres. Usually when the user is not signed in.The stuent folder contains pages available to students only. The superAdmin folder contains pages availble to superAdmin.
+| routerBuilder | The router builder folder contains route details that are mapped through, to have a more effective means of creating the routes. It contains student routes, lecturer routes, shared routes. All exported from the route builder. Note: All routes are lazy load for better load time and good performance.
+| routers | This all contains mapped routes of sub pages. All these components are exported and used in the routeBuidler.
+| store | This is ware the redux tools are kept. The store contains the root reducer which is an object that holds other reducers.
+| ui_elements | The ui elements contains all the graphical contens used for the application. It contains loaders, buttons, breadcrumbs, etc. All compoenents such as navbar useful to the application are stored here.
+| Utils | The utils folder contains all the utility functions being used in the application. These functions are logics, that are exported and imported into the application to for use.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### FINAL NOTICE
+For any further information or unbording, kindly reach out to your supervisor.
