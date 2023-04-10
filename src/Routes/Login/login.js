@@ -1,7 +1,7 @@
 
 import "./login.scss"
 import {useContext, useState} from "react";
-import {signInWithEmailAndPassword,browserLocalPersistence,setPersistence} from "firebase/auth";
+import {signInWithEmailAndPassword} from "firebase/auth";
 import {doc,updateDoc,} from "firebase/firestore"
 import {auth, db} from "../../configs/firebase.config";
 import {useLocation, useNavigate, useParams} from "react-router-dom";
@@ -10,7 +10,7 @@ import {UserContext} from "../../context/userContext";
 export default function Login(){
 
     const{user, setUser} = useContext(UserContext)
-    const [local,setLocal] = useState("")
+
     const [data, setData] = useState({
         email: "",
         password:"",

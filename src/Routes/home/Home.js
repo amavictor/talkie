@@ -87,7 +87,6 @@ export default function Home(){
     const handleSubmit = async (e)=>{
         e.preventDefault()
         const user2 = chat.uid //setting the receiver on submit
-
         const id = currentUser > user2 ? `${currentUser + user2}` : `${user2 + currentUser}`
         //the messages between the two users will be stored here. Its a concatenation of the two user ids
         //so if currentUser sends a message to user 2 of user 2 sends to current user it will be the same
