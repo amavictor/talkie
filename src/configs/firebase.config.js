@@ -4,7 +4,6 @@ import {getFirestore} from "firebase/firestore"
 import {getStorage} from "firebase/storage"
 import {
     getAuth,
-    signInWithEmailAndPassword
 } from "firebase/auth"
 
 const firebaseConfig = {
@@ -20,7 +19,6 @@ const firebaseConfig = {
 
 // Initialize Firebase
 export const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
 
 //authentication instances
 export const auth= getAuth(app)

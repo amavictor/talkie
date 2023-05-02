@@ -1,65 +1,99 @@
-.message_form{
-  label{
-    .up{
-      width: 50px;
-      height: 50px;
-    }
-  }
-  position: absolute;
-  bottom: 0;
-
-  left:20%;
-  width: fit-content;
-  height: fit-content;
+.message_form {
+  width: 100% !important;
   display: flex;
   align-items: center;
+  justify-content: center;
+  gap: 1%;
+  padding: 5px 20px;
+  margin: 0 auto;
 
-  input{
-    width: 40vw;
-    margin: 0px 10px 10px;
-    padding: 10px;
-    border-radius: 5px;
-    outline: none;
-    border: none;
-    font-size: 18px;
-  }
 
-  .btn{
-    margin-top: -10px;
-    background-color: transparent;
-    border: 2px solid gray;
-    color: white;
-    font-size: 18px;
-    border-radius: 4px;
-    padding: 5px 10px;
+  label {
+    position: relative;
 
-    &:hover{
-      cursor: pointer;
+    .upload {
+      width: 30px;
+      height: 30px;
+      transition: all .3s ease;
+      &:hover{
+        cursor: pointer;
+        transform: scale(1.2);
+      }
+    }
+    .image_true{
+      position: absolute;
+      top: 0;
+      right: -8px;
+      background-color: var(--red);
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
     }
   }
+
+  .input_send {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2%;
+    input {
+      height: 1rem;
+      padding: 20px !important;
+      width: 50rem;
+      text-align: start;
+      background-color: rgba(0,0,0,0.1);
+      color: white;
+      &::placeholder{
+        color: rgba(255,255,255,0.2);
+      }
+      &:focus{
+        border-color: rgba(255,255,255,0.4) !important;
+      }
+    }
+
+    .btn {
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: rgba(255,255,255,0.2);
+      transition: all .3s ease;
+      img {
+        width: 25px;
+        height: 25px;
+      }
+
+      &:hover {
+        transform: scale(1.2);
+        cursor: pointer;
+      }
+    }
+  }
+
+
 
 }
 
-@media screen and (max-width: 600px){
-  .message_form{
-    left:3%;
-    right:0;
+@media screen and (max-width: 600px) {
+  .message_form {
+    left: 3%;
+    right: 0;
 
-    label{
-      .up{
+    label {
+      .up {
         width: 20px;
         height: 20px;
       }
     }
 
-    input{
+    input {
       width: 50vw;
       height: 10px;
       margin: 0px 10px;
       font-size: 12px;
     }
 
-    .btn{
+    .btn {
       font-size: 12px;
       padding: 2px 5px;
     }

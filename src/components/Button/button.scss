@@ -1,0 +1,12 @@
+button{
+    padding: 3% 5%;
+    background-color: white;
+    color: var(--deep);
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-weight: 600;
+    &:hover{
+        cursor: pointer;
+    }
+}

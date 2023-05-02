@@ -35,27 +35,28 @@
 }*/
 
 
-.please{
+.my-message{
   display: flex;
   justify-content: flex-end;
   padding-right: 30px;
 
   .mine{
-    background-color: cornflowerblue;
+    background-color: var(--message-background);
     margin-bottom: 30px;
-    color: white;
-    width: 500px;
+    width:fit-content;
     height: fit-content;
-    padding: 2px 5px;
-    border-top-right-radius: 6px;
-    border-bottom-right-radius: 6px;
+    padding: 1rem;
+    border-top-left-radius: 6px;
     border-bottom-left-radius: 6px;
-
+    border-bottom-right-radius: 6px;
+    p{
+      color: white;
+    }
     img{
-      width: 300px;
-      height: 300px;
+      width: 15rem;
+      height: 15rem;
       border-radius: 10px;
-      object-fit: cover;
+      object-fit: contain;
     }
 
     small{
@@ -74,15 +75,25 @@
 
   .friend{
     margin-bottom: 30px;
-    background-color: gray;
+    background-color: #3F0071;
     width: fit-content;
     height: fit-content;
     padding: 6px 10px;
-    color:white;
     border-top-right-radius: 6px;
     border-bottom-right-radius: 6px;
     border-bottom-left-radius: 6px;
+    p{
+      color: white;   
+    }
 
+    img{
+      width: 20rem;
+      height: 20rem;
+      border-radius: 10px;
+      object-fit: contain;
+    }
+
+ 
 
     small{
       font-weight: lighter;
@@ -90,12 +101,8 @@
     }
   }
 
-  img{
-    width: 400px;
-    height: 400px;
-    border-radius: 10px;
-    object-fit: cover;
-  }
+
+ 
 }
 
 @media screen and (max-width: 600px){

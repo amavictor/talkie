@@ -1,6 +1,10 @@
 import Moment from "react-moment";
 import "./messageDisplay.scss"
-import {useEffect, useRef} from "react";
+import { useEffect, useRef } from "react";
+
+
+
+
 
 export default function MessageDisplay({msg, currentUser}) {
     const scrollRef = useRef()
@@ -16,7 +20,10 @@ export default function MessageDisplay({msg, currentUser}) {
                 from === currentUser
 
                 ?
-                    <div className={"please"} ref={scrollRef}>
+                    <div
+                        className={"my-message"}
+                        ref={scrollRef}
+                    >
                         <div className={"mine"}>
                             <p>
                                 {msg.media? <img src={msg.media} alt={msg.text}/> : null}
@@ -30,11 +37,12 @@ export default function MessageDisplay({msg, currentUser}) {
                         </div>
                     </div>
 
-
-
                 :
 
-                    <div className={"friend_message"} ref={scrollRef}>
+                    <div
+                        className={"friend_message"}
+                        ref={scrollRef}
+                    >
                         <div className={"friend"}>
                             <p>
                                 {msg.media? <img src={msg.media} alt={msg.text}/> : null}

@@ -4,8 +4,8 @@ import camera from "../../assets/camera.svg"
 import deletePic from "../../assets/delete.png"
 import {ref, getDownloadURL,uploadBytes,deleteObject} from "firebase/storage"
 import {useContext, useEffect, useState} from "react";
-import {storage, db, auth} from "../../configs/firebase.config";
-import {getDoc,doc,updateDoc,deleteField} from "firebase/firestore"
+import {storage, db} from "../../configs/firebase.config";
+import {getDoc,doc,updateDoc} from "firebase/firestore"
 import {UserContext} from "../../context/userContext";
 export default function Profile(){
     const [img, setImg] = useState("")
@@ -50,7 +50,7 @@ export default function Profile(){
             uploadImg()
 
         }
-    },[img])
+    },[img, localUser, user.uid])
 
     const deleteImage = async()=>{
         try{
@@ -72,10 +72,10 @@ export default function Profile(){
         <section>
             <div className={"profile_container"}>
                 <div className={"img_container"}>
-                    <img src={`${localUser.avatar} || ${profilePic} `} alt={"Profile Image"} className={"avatar"}/>
+                    <img src={`${localUser.avatar} || ${profilePic} `} alt={"Profile"} className={"avatar"}/>
                     <div className={"overlay"}>
                         <label htmlFor={"photo"}>
-                            <img src={camera} className={"camera"}/>
+                            <img src={camera} className={"camera"} alt={"camera"}/>
                         </label>
                         {localUser.avatar? <img src={deletePic} className={"camera"} onClick={deleteImage}/> :null }
                         <input

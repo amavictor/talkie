@@ -6,6 +6,8 @@ import {setDoc,collection,doc,serverTimestamp,Timestamp} from "firebase/firestor
 import {auth, db} from "../../configs/firebase.config";
 import {useLocation, useNavigate} from "react-router-dom";
 import {UserContext} from "../../context/userContext";
+import { Input } from '../../components/Input/input';
+import { Button } from '../../components/Button/button';
 
 export default function Register(){
     const {user,setUser} = useContext(UserContext)
@@ -76,19 +78,19 @@ export default function Register(){
                 <form onSubmit={handleSubmit}>
                     <div className={"input_container"}>
                         <label htmlFor={"name"}>Name</label>
-                        <input type={"text"} name={"name"} value={name} onChange={handleChange}/>
+                        <Input type={"text"} name={"name"} value={name} onChange={handleChange}/>
                     </div>
                     <div className={"input_container"}>
                         <label htmlFor={"email"}>Email</label>
-                        <input type={"text"} name={"email"} value={email} onChange={handleChange}/>
+                        <Input type={"text"} name={"email"} value={email} onChange={handleChange}/>
                     </div>
                     <div className={"input_container"}>
                         <label htmlFor={"password"}>Password</label>
-                        <input type={"password"} name={"password"} value={password} onChange={handleChange}/>
+                        <Input type={"password"} name={"password"} value={password} onChange={handleChange}/>
                     </div>
                     {error && <p className={"error"}>{data.error}</p>}
                     <div className={"button_container"}>
-                        <button type={"submit"} disabled={loading}>{!loading ? "Register" : "loading..."}</button>
+                        <Button type={"submit"} disabled={loading}>{!loading ? "Register" : "loading..."}</Button>
                     </div>
                 </form>
             </section>

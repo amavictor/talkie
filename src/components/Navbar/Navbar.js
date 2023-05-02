@@ -6,9 +6,9 @@ import {useContext, useEffect} from "react";
 import {updateDoc, doc} from "firebase/firestore";
 import {UserContext} from "../../context/userContext";
 
-export default function (){
+export default function Navbar (){
 
-    const {user,setUser} = useContext(UserContext)
+    const {user} = useContext(UserContext)
     const location = useLocation()
     const navigate = useNavigate()
     const handleSignOut =async ()=>{
