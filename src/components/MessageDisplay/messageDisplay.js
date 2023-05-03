@@ -9,6 +9,7 @@ import { useEffect, useRef } from "react";
 export default function MessageDisplay({msg, currentUser}) {
     const scrollRef = useRef()
     //omo mehn weytin
+    //chelsea comeon now 
 
     useEffect(()=>{
         scrollRef.current?.scrollIntoView({behavior: "smooth"})
